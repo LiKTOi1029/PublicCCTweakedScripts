@@ -2,7 +2,7 @@ local Defaults =
 {
   Path = 
   {
-	RCS = "RCS/RCS.lua",
+	RCS = shell.dir() .. "/RCS/RCS",
   },
   Worlds = 
   {
