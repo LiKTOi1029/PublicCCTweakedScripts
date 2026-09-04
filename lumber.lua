@@ -12,7 +12,11 @@ function Lumber.Init()
   io.write(Defaults.AllDebuggingProtocols["PRESSENTER"], "\n")
   io.read()
   -- Delimiter
-  io.write(Defaults.AllDebuggingProtocols["SETUP"], "Where is the personal chest located?\n")
+  io.write(Defaults.AllDebuggingProtocols["SETUP"], "Where is the personal chest located\n")
+  io.write(Defaults.AllDebuggingProtocols["SETUP"], "relative to the lumber turtle's location?\n")
+  io.write(Defaults.AllDebuggingProtocols["FORMAT"], "+X = Forward. +Y = Up. +Z = Right.\n")
+  io.write(Defaults.AllDebuggingProtocols["FORMAT"], "-X = Backwards. -Y = Down. -Z = Left.\n")
+  io.write(Defaults.AllDebuggingProtocols["FORMAT"], "X -> Space -> Y -> Space -> Z\n")
   io.write(Defaults.AllDebuggingProtocols["FORMAT"], "Number -> Space -> Number -> Space -> Number\n")
   repeat
 	io.write(Defaults.AllDebuggingProtocols["ANSWER"])
