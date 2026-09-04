@@ -13,11 +13,16 @@ function Lumber.Init()
   io.read()
   -- Delimiter
   io.write(Defaults.AllDebuggingProtocols["SETUP"], "Where is the personal chest located?\n")
-  io.write(Defaults.AllDebuggingProtocols["FORMAT"], "Number Number Number")
+  io.write(Defaults.AllDebuggingProtocols["FORMAT"], "Number -> Space -> Number -> Space -> Number\n")
   repeat
 	io.write(Defaults.AllDebuggingProtocols["ANSWER"])
 	local Choice = io.read()
-  until Choice:find("^%d+%s+%d+%s+%d+$")
+	local Success = Choice:find("^%d+%s+%d+%s+%d+$")
+	if not Success then 
+	  io.write(Defaults.AllDebuggingProtocols["FAILED"], "Invalid format\n")
+	  io.write(Defaults.AllDebuggingProtocols["FORMAT"], "Number -> Space -> Number -> Space -> Number\n")
+	end
+  until Success
   Lumber.Personal.Chest = Tablify.Execute("NORMAL", Choice, " ")
 end
 
