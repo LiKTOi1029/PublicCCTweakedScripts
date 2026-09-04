@@ -2,6 +2,10 @@ local Defaults = require("defaults")
 local RCS = require(Defaults.Path.RCS)
 local Tablify = require(Defaults.Path.Tablify)
 local Lumber = {}
+Lumber.Personal = {}
+Lumber.Personal.Chest
+Lumber.Settings = {}
+Lumber.Settings.File = "LumberConfig"
 
 function Lumber.Init()
   io.write(Defaults.AllDebuggingProtocols["INFO"], "Initializing Lumber.lua code\n")
@@ -14,7 +18,7 @@ function Lumber.Init()
 	io.write(Defaults.AllDebuggingProtocols["ANSWER"])
 	local Choice = io.read()
   until Choice:find("^%d+%s+%d+%s+%d+$")
-  local PersonalChest = Tablify.Execute("NORMAL", Choice, " ")
+  Lumber.Personal.Chest = Tablify.Execute("NORMAL", Choice, " ")
 end
 
 Lumber.Init()
