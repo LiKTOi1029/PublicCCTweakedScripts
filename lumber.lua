@@ -1,5 +1,5 @@
 local Defaults = require("defaults")
-local RCS = require(Defaults.RCS)
+local RCS = require(Defaults.Path.RCS)
 local Lumber = {}
 
 function Lumber.Init()
