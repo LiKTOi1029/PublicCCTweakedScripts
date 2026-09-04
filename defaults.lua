@@ -2,7 +2,7 @@ local Defaults =
 {
   Path = 
   {
-	RCS = shell.dir() .. "/RCS/RCS",
+	RCS = "RCS",
   },
   Worlds = 
   {
