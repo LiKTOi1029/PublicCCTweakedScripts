@@ -3,7 +3,6 @@ local RCS = require(Defaults.Path.RCS)
 local Tablify = require(Defaults.Path.Tablify)
 local Lumber = {}
 Lumber.Personal = {}
-Lumber.Personal.Chest
 Lumber.Settings = {}
 Lumber.Settings.File = "LumberConfig"
 
@@ -27,7 +26,7 @@ function Lumber.Init()
 	  io.write(Defaults.AllDebuggingProtocols["FORMAT"], "Number -> Space -> Number -> Space -> Number\n")
 	end
   until Success
-  Lumber.Personal.Chest = Tablify.Execute("NORMAL", Choice, " ")
+  Lumber.Personal.Chest = Tablify.Execute("NORMAL", Choice, " ")z
 end
 
 Lumber.Init()
