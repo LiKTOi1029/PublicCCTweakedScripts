@@ -44,16 +44,15 @@ function Lumber.Init()
 	end
   until Choice == "DONE"
   local File = fs.open(Defaults.Path.FolderIdentity .. Lumber.Settings.File, "w")
-  File.write("CHEST->", table.concat(Lumber.Personal.Chest, ", "),"\n")
+  File.write("CHEST->", table.concat(Lumber.Personal.Chest, ", "), "\n")
   for Index, Tree in ipairs(Lumber.Personal.Trees) do
-	File.write(Index, "->", Tree[1], ",", Tree[2], ",", Tree[3], "\n")
+	File.write(tostring(Index), "->", Tree[1], ",", Tree[2], ",", Tree[3], "\n")
   end
-  File.write("\b")
   File.close()
 end
 
 function Lumber.LoadSettings()
-
+  
 end
 
 if not fs.exists(Lumber.Settings.File) then Lumber.Init()
