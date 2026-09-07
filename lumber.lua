@@ -6,7 +6,7 @@ Lumber.CoordinatesFormat = "^%-?%d+ %-?%d+ %-?%d+$"
 Lumber.Personal = {}
 Lumber.Personal.Trees = {}
 Lumber.Settings = {}
-Lumber.Settings.File = "LumberConfig"
+Lumber.Settings.File = "lumber.config"
 
 function Lumber.Init()
   io.write(Defaults.AllDebuggingProtocols["INFO"], "Initializing Lumber.lua code\n")
@@ -43,6 +43,13 @@ function Lumber.Init()
 	  Lumber.Personal.Trees[#Lumber.Personal.Trees+1] = Tablify.Execute("NORMAL", Choice, " ")
 	end
   until Choice == "DONE"
+  local File = fs.open(Lumber.Settings.File, "w")
+  File.write("CHEST->", table.concat(Lumber.Personal.Chest, ", "),"\n")
+  for Index, Tree in ipairs(Lumber.Personal.Trees) do
+	File.write(Index, "->", Tree[1], ",", Tree[2], "," Tree[3], "\n")
+  end
+  File.write("\b")
+  File.close()
 end
 
 Lumber.Init()
