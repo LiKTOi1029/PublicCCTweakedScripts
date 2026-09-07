@@ -26,7 +26,7 @@ function Lumber.Init()
 	  io.write(Defaults.AllDebuggingProtocols["FORMAT"], "Number -> Space -> Number -> Space -> Number\n")
 	end
   until Success
-  Lumber.Personal.Chest = Tablify.Execute("NORMAL", Choice, " ")z
+  Lumber.Personal.Chest = Tablify.Execute("NORMAL", Choice, " ")
 end
 
 Lumber.Init()
