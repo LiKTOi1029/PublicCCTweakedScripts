@@ -20,7 +20,7 @@ function Lumber.Init()
   repeat
 	io.write(Defaults.AllDebuggingProtocols["ANSWER"])
 	local Choice = io.read()
-	local Success = Choice:find("^%d+%s+%d+%s+%d+$")
+	local Success = Choice:find("^%d+ %d+ %d+$")
 	if not Success then 
 	  io.write(Defaults.AllDebuggingProtocols["FAILED"], "Invalid format\n")
 	  io.write(Defaults.AllDebuggingProtocols["FORMAT"], "Number -> Space -> Number -> Space -> Number\n")
