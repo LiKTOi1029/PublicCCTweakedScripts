@@ -52,5 +52,11 @@ function Lumber.Init()
   File.close()
 end
 
-Lumber.Init()
+function Lumber.LoadSettings()
+
+end
+
+if not fs.exists(Lumber.Settings.File) then Lumber.Init()
+else Lumber.LoadSettings() end
+
 return Lumber
