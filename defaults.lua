@@ -5,6 +5,7 @@ Defaults =
   {
 	RCS = "RCS",
 	Tablify = "tablify",
+	FolderIdentity = shell.dir() .. "/"
   },
   Worlds = 
   {
