@@ -36,13 +36,13 @@ function Lumber.Init()
 	io.write(Defaults.AllDebuggingProtocols["ANSWER"])
 	Choice = io.read():upper()
 	local Success = Choice:find(Lumber.CoordinatesFormat)
-	if not Success and Choice ~= "EXIT" then
+	if not Success and Choice ~= "DONE" then
 	  io.write(Defaults.AllDebuggingProtocols["FAILED"], "Invalid format\n")
 	  io.write(Defaults.AllDebuggingProtocols["FORMAT"], "Number -> Space -> Number -> Space -> Number\n")
 	elseif Success then
 	  Lumber.Personal.Trees[#Lumber.Personal.Trees+1] = Tablify.Execute("NORMAL", Choice, " ")
 	end
-  until Choice == "EXIT"
+  until Choice == "DONE"
 end
 
 Lumber.Init()
