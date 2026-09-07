@@ -46,7 +46,7 @@ function Lumber.Init()
   local File = fs.open(Lumber.Settings.File, "w")
   File.write("CHEST->", table.concat(Lumber.Personal.Chest, ", "),"\n")
   for Index, Tree in ipairs(Lumber.Personal.Trees) do
-	File.write(Index, "->", Tree[1], ",", Tree[2], "," Tree[3], "\n")
+	File.write(Index, "->", Tree[1], ",", Tree[2], ",", Tree[3], "\n")
   end
   File.write("\b")
   File.close()
